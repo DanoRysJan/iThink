@@ -45,7 +45,7 @@ Pasos:
 - `src/pages/index.astro`: landing principal
 - `src/layouts/BaseLayout.astro`: layout base y favicon
 - `src/styles/global.css`: estilos globales
-- `public/ithink-logo.png`: logo e icono del sitio
+- `src/assets/ithink-logo.png`: logo e icono del sitio
 
 ## Notas
 
