@@ -1,0 +1,36 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'iThink | Educacion y emprendimiento con proposito',
+  description = 'iThink es una iniciativa educativa y sin fines de lucro enfocada en aprendizaje, emprendimiento y formacion con impacto social.',
+} = Astro.props;
+
+const logoPath = `${import.meta.env.BASE_URL}ithink-logo.png`;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/png" href={logoPath} />
+    <link rel="shortcut icon" href={logoPath} />
+    <link rel="apple-touch-icon" href={logoPath} />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

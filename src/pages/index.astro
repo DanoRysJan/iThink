@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/global.css';
+
+const focusAreas = [
+  {
+    title: 'Educacion con sentido',
+    text: 'Promovemos experiencias de aprendizaje claras, accesibles y utiles para la vida real.',
+  },
+  {
+    title: 'Emprendimiento humano',
+    text: 'Impulsamos ideas con impacto, creatividad y una mirada responsable hacia la comunidad.',
+  },
+  {
+    title: 'Sin fines de lucro',
+    text: 'Nuestro enfoque pone primero el desarrollo de personas, no la rentabilidad economica.',
+  },
+];
+
+const values = [
+  'Aprender haciendo',
+  'Construir comunidad',
+  'Compartir herramientas practicas',
+  'Desarrollar ideas con proposito',
+];
+
+const logoPath = `${import.meta.env.BASE_URL}ithink-logo.png`;
+---
+
+<BaseLayout>
+  <main class="page-shell">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">iThink</p>
+        <h1 class="hero-title">
+          <span>Educacion y</span>
+          <span>emprendimiento</span>
+          <span>para crear</span>
+          <span>oportunidades</span>
+          <span>reales.</span>
+        </h1>
+        <p class="hero-text">
+          iThink es una iniciativa educativa, social y sin fines de lucro que busca inspirar,
+          acompanar y fortalecer el desarrollo de personas con ideas, aprendizaje y accion.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#que-es">Conoce iThink</a>
+          <a class="button secondary" href="https://www.facebook.com/iThinkMX/" target="_blank" rel="noreferrer">
+            Ver Facebook
+          </a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img class="hero-logo" src={logoPath} alt="Logo de iThink" width="96" height="96" />
+        <p class="card-label">Nuestra base</p>
+        <ul>
+          <li>Formacion accesible</li>
+          <li>Ideas que se convierten en accion</li>
+          <li>Impacto positivo en la comunidad</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section intro" id="que-es">
+      <div class="section-heading">
+        <p class="eyebrow">Que es iThink</p>
+        <h2>Un espacio para aprender, emprender y aportar.</h2>
+      </div>
+      <p class="section-text">
+        La propuesta de iThink combina educacion, iniciativa y desarrollo personal. La idea es
+        ofrecer un punto de encuentro donde las personas puedan descubrir herramientas, generar
+        proyectos y crecer con una vision de servicio.
+      </p>
+    </section>
+
+    <section class="section cards" aria-label="Areas de impacto">
+      {focusAreas.map((item, index) => (
+        <article class="info-card">
+          <p class="card-number">0{index + 1}</p>
+          <h3>{item.title}</h3>
+          <p>{item.text}</p>
+        </article>
+      ))}
+    </section>
+
+    <section class="section split">
+      <div class="split-panel accent">
+        <p class="eyebrow">Como lo entendemos</p>
+        <h2>El conocimiento vale mas cuando se comparte y se aplica.</h2>
+        <p>
+          iThink puede funcionar como una plataforma de ideas, talleres, iniciativas educativas y
+          proyectos con enfoque emprendedor. La meta es abrir puertas, no complicarlas.
+        </p>
+      </div>
+      <div class="split-panel checklist">
+        <p class="eyebrow">Principios</p>
+        <ul>
+          {values.map((value) => (
+            <li>{value}</li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <section class="section cta">
+      <div>
+        <p class="eyebrow">Sigamos conectados</p>
+        <h2>Una landing clara hoy, una comunidad con impacto manana.</h2>
+        <p>
+          Este sitio presenta la esencia de iThink de forma sencilla. Mas adelante se pueden sumar
+          cursos, actividades, convocatorias o historias de proyectos reales.
+        </p>
+      </div>
+      <a class="button primary" href="https://www.facebook.com/iThinkMX/" target="_blank" rel="noreferrer">
+        Ir a la comunidad
+      </a>
+    </section>
+  </main>
+</BaseLayout>
